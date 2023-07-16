@@ -11,6 +11,8 @@ TagManager:
   - Imagem_AK
   - Imagem_Pistol
   - Canvas
+  - Imagem_Pistola
+  - Zona_Espada
   layers:
   - Default
   - TransparentFX

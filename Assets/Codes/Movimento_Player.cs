@@ -22,6 +22,10 @@ public class Movimento_Player : MonoBehaviour
     public float limit_min_y;
     public float limit_max_y;
 
+    public GameObject effect;
+
+    public int vida = 3;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -80,5 +84,15 @@ public class Movimento_Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x, limit_max_y - 0.1f, 0);
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.CompareTag("Zona_Espada"))
+        {
+            vida--;
+            Instantiate(effect, transform.position, transform.rotation);
+        }
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d353b899545289842a483f6b73251511
+guid: 03266c86eecde9646948d27a12399408
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,9 +9,8 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Arcadegamerfont
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 5436aac5606d8de4e8a2c9bd01745a16, type: 3}
+  - Pixel-Art
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

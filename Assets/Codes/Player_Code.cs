@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class Player_Code : MonoBehaviour
@@ -12,6 +13,7 @@ public class Player_Code : MonoBehaviour
     public List<GameObject> armas;
     private int Arma_Selecionada = 0;
     public FixedJoystick js_mov;
+    public Text ammoText;
 
     public Vector2 myInput; // Vector2 que armazena os inputs do joystick de movimento
 
@@ -57,6 +59,11 @@ public class Player_Code : MonoBehaviour
 
             }
         }
+
+        if (armaAtual != null)
+        {
+            ammoText.text = armaAtual.GetComponent<Shoot>().municao.ToString();
+        }
     }
 
     public void Troca_arma()
@@ -77,4 +84,6 @@ public class Player_Code : MonoBehaviour
         armas[Arma_Selecionada].GetComponent<PickupWeapon>().fotinha.GetComponent<Ativa_desativa>().ativado = true;
         armaAtual = armas[Arma_Selecionada];
     }
+
+
 }
