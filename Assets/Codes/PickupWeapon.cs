@@ -15,21 +15,14 @@ public class PickupWeapon : MonoBehaviour
     public float scaleSpeed = .8f;
     public float diference = .5f;
     public float normalScale = .9f;
-    private bool isScalingUp = true;
-    private float maxScale;
-    private float minScale;
     public float scale;
-    public bool Volta_normal= false;
-
+    public bool Volta_normal = false;
     public bool Enemy_Weapon;
-
     public AudioSource sound;
 
     private void Start()
     {
         self = GetComponent<PickupWeapon>();
-        maxScale = transform.localScale.x + diference; 
-        minScale = transform.localScale.x - diference;
         Player = GameObject.Find("Player");
         scale = transform.localScale.x;
     }
@@ -39,10 +32,7 @@ public class PickupWeapon : MonoBehaviour
         if (Volta_normal)
         {
             transform.localScale = Vector3.one * scale;
-            maxScale = transform.localScale.x + diference;
-            minScale = transform.localScale.x - diference;
             Volta_normal = false;
-
         }
         if (get)
         {

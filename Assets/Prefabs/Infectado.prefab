@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1234146208112369664}
   - component: {fileID: 9052160637255720512}
   - component: {fileID: 6584472317581065709}
+  - component: {fileID: 1726763830753190194}
   m_Layer: 0
   m_Name: Infectado
   m_TagString: Enemy
@@ -260,7 +261,6 @@ MonoBehaviour:
   Player_Avistado: 1
   rb: {fileID: 0}
   isJumping: 0
-  Alcance_Dano: {fileID: 1458865528263330852}
   pode: 1
 --- !u!114 &1234146208112369664
 MonoBehaviour:
@@ -303,3 +303,16 @@ MonoBehaviour:
   Anim_Death: 1
   animal: 0
   morreu: 0
+--- !u!114 &1726763830753190194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067451754705857827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3878b59a2af13479d3614f645fb5f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zona_espada: {fileID: 1458865528263330852}

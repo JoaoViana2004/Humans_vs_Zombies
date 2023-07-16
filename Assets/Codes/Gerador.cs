@@ -17,6 +17,8 @@ public class Gerador : MonoBehaviour
     public float spawnInterval = 5f; // Intervalo de tempo para o spawn dos objetos
     private float timer = 0f; // Tempo decorrido desde a última invocação dos objetos
 
+    public bool gerar=true;
+
     private void Update()
     {
         timer += Time.deltaTime; // Atualiza o timer com o tempo decorrido desde o último quadro
@@ -30,14 +32,17 @@ public class Gerador : MonoBehaviour
 
     private void SpawnObjects()
     {
-        foreach (ObjectChance objChance in objectsToSpawn)
+        if (gerar)
         {
-            if (UnityEngine.Random.Range(0f, 100f) <= objChance.chance)
+            foreach (ObjectChance objChance in objectsToSpawn)
             {
-                float xPos = UnityEngine.Random.Range(xMin, xMax);
-                float yPos = UnityEngine.Random.Range(yMin, yMax);
+                if (UnityEngine.Random.Range(0f, 100f) <= objChance.chance)
+                {
+                    float xPos = UnityEngine.Random.Range(xMin, xMax);
+                    float yPos = UnityEngine.Random.Range(yMin, yMax);
 
-                Instantiate(objChance.obj, new Vector3(xPos, yPos, 0f), Quaternion.identity);
+                    Instantiate(objChance.obj, new Vector3(xPos, yPos, 0f), Quaternion.identity);
+                }
             }
         }
     }

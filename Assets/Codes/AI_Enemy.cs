@@ -26,7 +26,6 @@ public class AI_Enemy : MonoBehaviour
     public bool Player_Avistado = false;
     public Rigidbody2D rb;
     public bool isJumping=false;
-    public GameObject Alcance_Dano;
 
     public bool pode=true;
 
@@ -145,16 +144,6 @@ public class AI_Enemy : MonoBehaviour
     public void Desativa_Movimentacao()
     {
         pode = false;
-    }
-
-    public void Comeca_Dano()
-    {
-        Alcance_Dano.SetActive(true);
-    }
-
-    public void Termina_Dano()
-    {
-        Alcance_Dano.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
