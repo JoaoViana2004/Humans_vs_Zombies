@@ -22,6 +22,7 @@ public class PickupWeapon : MonoBehaviour
     public bool Volta_normal = false;
     public bool Enemy_Weapon;
     public AudioSource sound;
+    public string imageTag;
 
     public UnityEngine.UI.Image fotinha;
 
@@ -31,19 +32,8 @@ public class PickupWeapon : MonoBehaviour
         Player = GameObject.Find("Player");
         scale = transform.localScale.x;
 
-        GameObject canvasObject = GameObject.FindGameObjectWithTag("Canvas"); // Encontrar o objeto do CanvasS
-        fotinha = canvasObject.GetComponentInChildren<UnityEngine.UI.Image>(true);
-        string imageTag = "Imagem_" + nome;
-        if (canvasObject != null)
-        {
-            //while (!fotinha.CompareTag(imageTag))
-            fotinha = canvasObject.GetComponentInChildren<UnityEngine.UI.Image>(true);
-            if (fotinha != null && fotinha.CompareTag(imageTag))
-            {
-                // A imagem com a tag específica foi encontrada
-                Debug.Log("Imagem encontrada com a tag: " + imageTag);
-            }
-        }
+        fotinha = GameObject.FindGameObjectWithTag("Finish").GetComponent<Genrenciador_Encontrador>().Salada_de_fruta(nome);
+
     }
 
     private void Update()

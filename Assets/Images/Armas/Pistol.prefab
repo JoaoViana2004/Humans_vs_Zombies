@@ -134,6 +134,7 @@ MonoBehaviour:
   Volta_normal: 0
   Enemy_Weapon: 0
   sound: {fileID: 8642049962713502992}
+  imageTag: 
   fotinha: {fileID: 0}
 --- !u!61 &3555582667114601228
 BoxCollider2D:

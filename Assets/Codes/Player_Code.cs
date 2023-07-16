@@ -63,7 +63,7 @@ public class Player_Code : MonoBehaviour
     {
         // Desativa a arma atual
         armas[Arma_Selecionada].SetActive(false);
-        armas[Arma_Selecionada].GetComponent<PickupWeapon>().fotinha.enabled = false;
+        armas[Arma_Selecionada].GetComponent<PickupWeapon>().fotinha.GetComponent<Ativa_desativa>().ativado = false;
 
         // Avança para a próxima arma na lista
         Arma_Selecionada++;
@@ -74,7 +74,7 @@ public class Player_Code : MonoBehaviour
 
         // Ativa a nova arma selecionada
         armas[Arma_Selecionada].SetActive(true);
-        armas[Arma_Selecionada].GetComponent<PickupWeapon>().fotinha.enabled = true;
+        armas[Arma_Selecionada].GetComponent<PickupWeapon>().fotinha.GetComponent<Ativa_desativa>().ativado = true;
         armaAtual = armas[Arma_Selecionada];
     }
 }
