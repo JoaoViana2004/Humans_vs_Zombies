@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f07bc27c90ebe874cacbcf537724143b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Ponta: {instanceID: 0}
+  - Bala: {fileID: 7683572092153176348, guid: e34c9578161cc3741bb00c4542587805, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
