@@ -229,7 +229,7 @@ MonoBehaviour:
   self: {fileID: 0}
   Player: {fileID: 0}
   get: 0
-  nome: 
+  nome: AK
   scaleSpeed: 0.8
   diference: 0.5
   normalScale: 0.9
@@ -237,6 +237,7 @@ MonoBehaviour:
   Volta_normal: 0
   Enemy_Weapon: 0
   sound: {fileID: 6996480841488625027}
+  fotinha: {fileID: 0}
 --- !u!82 &6996480841488625027
 AudioSource:
   m_ObjectHideFlags: 0

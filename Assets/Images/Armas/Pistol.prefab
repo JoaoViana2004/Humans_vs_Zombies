@@ -32,12 +32,12 @@ Transform:
   m_GameObject: {fileID: 1342834412207570000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.033466667, y: -0.017666658, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 5}
+  m_LocalScale: {x: 3, y: 3, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4815355042221259400}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7986074347464944509
 SpriteRenderer:
@@ -109,7 +109,6 @@ MonoBehaviour:
   atirar: 0
   municao: 10
   fireRate: 3
-  shoot: {fileID: 8252113336901747423}
   p: 0.02
   speed_bullet: 6
 --- !u!114 &-8051707936837122853
@@ -127,11 +126,15 @@ MonoBehaviour:
   self: {fileID: 0}
   Player: {fileID: 0}
   get: 0
-  name: Pistola
+  nome: Pistol
   scaleSpeed: 0.8
   diference: 0.5
   normalScale: 1
+  scale: 0
+  Volta_normal: 0
+  Enemy_Weapon: 0
   sound: {fileID: 8642049962713502992}
+  fotinha: {fileID: 0}
 --- !u!61 &3555582667114601228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -167,7 +170,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.06600003, y: 0.24799998}
     oldSize: {x: 0.1, y: 0.1}
     newSize: {x: 0.1, y: 0.1}
     adaptiveTilingThreshold: 0.5

@@ -8,6 +8,9 @@ TagManager:
   - Arma
   - Bullet
   - BackGround
+  - Imagem_AK
+  - Imagem_Pistol
+  - Canvas
   layers:
   - Default
   - TransparentFX
