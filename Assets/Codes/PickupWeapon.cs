@@ -11,6 +11,7 @@ public class PickupWeapon : MonoBehaviour
     public PickupWeapon self; 
     public GameObject Player; 
     public bool get = false;
+    private Transform parentTransform;
 
     public string nome;
 
@@ -39,7 +40,6 @@ public class PickupWeapon : MonoBehaviour
     {
         if (Volta_normal)
         {
-            transform.localScale = Vector3.one * scale;
             Volta_normal = false;
         }
         if (get)
@@ -69,6 +69,14 @@ public class PickupWeapon : MonoBehaviour
                         get = true;
 
                         transform.localScale = new Vector3(normalScale, normalScale, normalScale);
+
+                        parentTransform = transform.parent;
+
+                        // Zerar a rotação local do filho em relação ao pai
+                        transform.localRotation = Quaternion.identity;
+
+                        // Atribuir a rotação do pai como rotação global do filho
+                        transform.rotation = parentTransform.rotation;
 
                         Player.GetComponent<Player_Code>().Troca_arma();
                     }

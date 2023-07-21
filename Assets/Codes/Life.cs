@@ -22,6 +22,8 @@ public class Life : MonoBehaviour
     {
         if (vida <= 0 && !morreu)
         {
+            GameObject.Find("Gerenciador").GetComponent<Genrenciador_Encontrador>().Salada_de_texto();
+
             Instantiate(cabou, transform.position, transform.rotation);
             if (Anim_Death)
             {

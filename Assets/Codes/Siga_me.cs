@@ -6,6 +6,7 @@ public class Siga_me : MonoBehaviour
 {
     public GameObject seguindo;
     public float scale;
+    public bool pode;
 
     private void Start()
     {
@@ -16,13 +17,18 @@ public class Siga_me : MonoBehaviour
     void Update()
     {
         transform.position = seguindo.transform.position;
-        if(Mathf.Abs(transform.rotation.z)> 0.6f)
+        if (Mathf.Abs(transform.rotation.z) > 0.6f)
         {
             transform.localScale = new Vector3(scale, -scale, scale);
         }
         else
         {
             transform.localScale = Vector2.one * scale;
+        }
+
+        if (pode)
+        {
+            pode = false;
         }
     }
 }
