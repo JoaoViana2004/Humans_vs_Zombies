@@ -12,7 +12,7 @@ public class Gerenciador_life : MonoBehaviour
     public Sprite vida_cheia;
     public Sprite vida_vazia;
 
-    public Movimento_Player vida_player;
+    public Life vida_player;
 
     // Update is called once per frame
     void Update()

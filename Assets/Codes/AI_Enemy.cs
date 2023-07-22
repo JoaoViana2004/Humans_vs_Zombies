@@ -28,6 +28,7 @@ public class AI_Enemy : MonoBehaviour
     public bool isJumping=false;
 
     public bool pode=true;
+    public float linha_distancia = 0.4f;
 
     private void Start()
     {
@@ -41,7 +42,6 @@ public class AI_Enemy : MonoBehaviour
     {
         if (!Player_Avistado)
         {
-            // Verificar Posição do Personagem (Direita ou Esquerda) 
             if (pos == 1)
             {
                 transform.localScale = new Vector3(scale, scale, scale);
@@ -50,18 +50,11 @@ public class AI_Enemy : MonoBehaviour
             {
                 transform.localScale = new Vector3(-scale, scale, scale);
             }
-
             if (isWalking)
             {
-                // Lógica para mover o animal para a direita ou esquerda.
-
                 rb.velocity = (Vector2.right * speed_a);
             }
-
-            // Atualiza o parâmetro 'walk' do animator para definir a animação correta.
             animator.SetBool("Walk", isWalking);
-
-
             distance = transform.position.x - Player.transform.position.x;
             if (((Mathf.Abs(distance) <= detectionDistance && distance < 0 && pos == 1) && Mathf.Abs(transform.position.y - Player.transform.position.y)<0.5) || ((Mathf.Abs(distance) <= detectionDistance && distance > 0 && pos == -1) && Mathf.Abs(transform.position.y - Player.transform.position.y) < 0.5))
             {
@@ -101,6 +94,8 @@ public class AI_Enemy : MonoBehaviour
 
     public void atack_player()
     {
+        float distanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
+
         Vector3 direction = Player.transform.position - transform.position;
         direction.Normalize();
         Distancia = new Vector2(direction.x, direction.y);
@@ -108,7 +103,7 @@ public class AI_Enemy : MonoBehaviour
         float Distancia3 = Player.transform.position.y - transform.position.y;
 
 
-        if (Mathf.Abs(Distancia2) > 0.4)
+        if (distanceToPlayer > linha_distancia)
         {
             animator.SetBool("Walk", true);
             animator.SetBool("Attack", false);

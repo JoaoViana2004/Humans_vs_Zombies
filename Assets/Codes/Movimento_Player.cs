@@ -24,7 +24,6 @@ public class Movimento_Player : MonoBehaviour
 
     public GameObject effect;
 
-    public int vida = 3;
 
     private void Start()
     {
@@ -84,15 +83,5 @@ public class Movimento_Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x, limit_max_y - 0.1f, 0);
         }
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(collision.gameObject.tag);
-        if (collision.CompareTag("Zona_Espada"))
-        {
-            vida--;
-            Instantiate(effect, transform.position, transform.rotation);
-        }
     }
 }
